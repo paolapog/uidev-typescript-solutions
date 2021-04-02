@@ -1,0 +1,26 @@
+Q: What makes type aliases useful? Select all that apply.
+A: You can use them to give names to specific type signatures., You can reuse complicated type signatures in multiple places in your code. , They can represent any type, not just structural types like Arrays and Objects.
+
+Q: What is wrong with these types?
+type LinkedList = {
+  head: LinkedListNode;
+  size: () => number;
+  clear: () => void;
+  getFirst: () => LinkedListNode;
+  getLast: () => LinkedListNode;
+};
+type LinkedListNode = {
+  value: string;
+  next?: LinkedListNode;
+};
+A: There is nothing wrong with these types. They accurately represent the Linked List data structure and have no errors.
+
+Q: What is wrong with the following code?
+type FruitList = string[];
+
+const fruit:FruitList = ["Apple", "Orange"]
+const duplicateList:string[] = fruit;
+A: Nothing is wrong. Type aliases don't create unique types, so FruitList is equivalent to string[];
+
+score: 70%
+

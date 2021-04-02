@@ -1,0 +1,33 @@
+Q: What does this type signature mean?
+type Food = Fruit | Vegetable;
+A: Food is a type which represents either Fruit or Vegetable.
+
+Q: What is the result of this code?
+interface Fruit {
+  name: string;
+  sweetness: number;
+}
+interface Vegetable {
+  name: string;
+  hasSeeds: boolean;
+}
+type EdibleThing = Fruit | Vegetable;
+
+function sayName(food:EdibleThing) {
+  console.log(food.name)
+}
+A: It compiles and type checks correctly.
+
+Q: Why is TypeScript throwing a type error in this function?
+interface Fruit {
+  name: string;
+  calories?: number;
+}
+
+function getCalories(fruit?: Fruit): number {
+  const calories = fruit?.calories;
+  return calories;
+}
+A: The calories variable is a Union of number | undefined, but the function only returns number.
+
+score: 100%

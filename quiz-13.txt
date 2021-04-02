@@ -1,0 +1,10 @@
+Q: What is the result of this code?
+type Seasons = "spring" | "summer" | "autumn" | "winter";
+
+let currentSeason:Seasons = "summer";
+let myFavoriteSeason:string = currentSeason;
+
+let currentSeason = "fall"
+A: It throws an error because you can't assign the literal "fall" to a Seasons variable.
+
+score: 100%

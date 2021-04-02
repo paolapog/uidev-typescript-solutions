@@ -1,0 +1,26 @@
+Q: What properties exist on EdibleThingType?
+type FruitType = { 
+  name: string;
+  sweetness: number 
+};
+type VegetableType = {
+  name: string;
+  hasSeeds: string;
+};
+
+type EdibleThingType = FruitType & VegetableType;
+A: name, sweetness, hasSeeds
+
+Q: What is the type of the sweetness property of SweetThing?
+interface Fruit {
+  name: string;
+  sweetness: number;
+}
+interface Candy {
+  name: string;
+  sweetness: string;
+}
+type SweetThing = Fruit & Candy;
+A: never
+
+score: 100%
