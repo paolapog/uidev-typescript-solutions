@@ -1,0 +1,7 @@
+Q: Why is it useful to annotate functions with the 'void' type? Select all that apply.
+A: It makes it clear that the function doesn't return anything., TypeScript will warn us if we try to return anything other than undefined., TypeScript will warn us if we try to use the return value when we call the function.
+
+Q: What are some examples of functions that never return anything, which might benefit from the never type?
+A: A function that throws an error before returning anything., An infinite loop function.
+
+score: 83%
