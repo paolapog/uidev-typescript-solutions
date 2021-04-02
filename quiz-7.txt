@@ -1,0 +1,40 @@
+Q: Interfaces allow us to give names to the shapes of objects in our code.
+A: true
+
+Q: Two different Interfaces that are the same shape are incompatible.
+A: false
+
+Q: What is the result of the following code?
+interface Fruit {
+  name: string;
+}
+interface Fruit {
+  color: string;
+  sweetness: number;
+}
+
+const apple: Fruit = { name: "apple" };
+A: A type error is thrown
+
+Q: What is the result of the following code?
+interface EdibleThing {
+  name:string
+}
+
+interface Fruit extends EdibleThing {
+  color:string
+}
+
+const apple:Fruit = { name:"Apple", color:"red" };
+
+const foodBasket:EdibleThing[] = [];
+foodBasket.push(apple);
+A: An apple object is put in the foodBasket array.
+
+Q: What does the type signature on this Interface mean?
+interface Fruit {
+  [key: string]: string;
+}
+A: This Interface has an undetermined number of properties which can be accessed with a string index; each of them is a string.
+
+score: 80%
