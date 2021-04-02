@@ -1,0 +1,23 @@
+Q: Why is it a good idea to add type annotations to the return type of functions?
+A: It can help catch situations where you accidentally return the wrong type from your function.
+
+Q: What is the return type signature for an async function that returns a string?
+A: Promise<string>
+
+Q: What does a question mark (?) before a parameter type annotation mean?
+For example:
+
+function logOutput(message: string, yell?: boolean) {
+  // Implementation goes here
+}
+A: It marks that parameter as optional.
+
+Q: How do we annotate spread parameters in a function where each parameter is a string?
+In other words, what is the type annotation for messages?
+
+function logManyOutput(...messages) {
+  // Implementation goes here.
+}
+A: string[]
+
+score: 100%
