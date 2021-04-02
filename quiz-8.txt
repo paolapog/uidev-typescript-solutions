@@ -1,0 +1,50 @@
+Q: What part of this function might cause an unexpected error?
+const SEASONS = {
+  winter: "winter",
+  spring: "spring",
+  summer: "summer",
+  autumn: "autumn",
+};
+
+function seasonsGreetings(season: string) {
+  if (season === SEASONS.winter) return "⛄️";
+  if (season === SEASONS.spring) return "🐰";
+  if (season === SEASONS.summer) return "🏖";
+  if (season === SEASONS.autumn) return "🍂";
+}
+A: We can pass any string value to our function, which would make it return undefined.
+
+Q: What is the value of the currentSeason variable?
+enum SEASONS {
+  winter = "snowy",
+  spring = "rainy",
+  summer = "sunny",
+  autumn = "windy",
+}
+
+const currentSeason = SEASONS.winter;
+A: "snowy"
+
+Q: What is the result of running this code?
+enum Seasons {
+    spring = "spring"
+    summer = "summer"
+    autumn = "fall"
+    winter = "winter"
+}
+let myStringEnum = Seasons.spring
+myStringEnum = "winter" 
+A: A type error is thrown because myStringEnum cannot be set to a string
+
+Q: What is the type of coordinatesArray?
+const coordinatesArray = [5,2]
+A: An array of numbers: number[]
+
+Q: What is the type of coordinatesTuple?
+const coordinatesTuple:[number, number] = [5,2]
+A: A tuple of two numbers: [number, number]
+
+Q: Why do we always have to add a type annotation to tuples?
+A: TypeScript infers any kind of array as an array; it never automatically recognizes tuples.
+
+score: 76%
