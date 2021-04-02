@@ -1,0 +1,27 @@
+Q: What is wrong with the following code block? Select all that apply.
+const numberOfGuests: Number
+
+console.log(numberOfGuests)
+
+numberOfGuests = 8;
+
+A: We use the uppercase Number object as our type instead of the appropriate lowercase number, We are using a variable before it is assigned a value.
+
+Q: How are array types annotated? Select all that apply.
+A: Using two square brackets after the item type name (string[]), Using the Array keyword followed by two angle brackets with the item type in the middle (Array<string>), but this is discouraged.
+
+Q: What is the type of the drinkChoice variable in this code block?
+const menu: {
+  courses:number;
+  veganOption: boolean;
+  drinkChoices: string[];
+} = {
+  courses: 5,
+  veganOption: true,
+  drinkChoices: ["Sprite", "Coke", "Water"]
+}
+
+const drinkChoice = menu.drinkChoices[2]
+A: string
+
+score: 83%
