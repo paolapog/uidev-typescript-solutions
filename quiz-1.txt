@@ -10,3 +10,5 @@ A: No, it is intentionally flexible to make it easy to transition programs from 
 Q: TypeScript will eliminate entire classes of errors and issues, so I don't need to write automated tests.
 A: false
 
+score: 100%
+
