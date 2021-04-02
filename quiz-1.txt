@@ -1,0 +1,12 @@
+Q: What are all of the functions of TypeScript? Select all that apply.
+A: Compiler, Type Checker, Linter
+
+Q: TypeScript is a superset of JavaScript, which means it can read and compile any JavaScript program.
+A: true
+
+Q: Does TypeScript have the strictest type safety of any language that compiles to JavaScript?
+A: No, it is intentionally flexible to make it easy to transition programs from JavaScript to TypeScript.
+
+Q: TypeScript will eliminate entire classes of errors and issues, so I don't need to write automated tests.
+A: false
+
