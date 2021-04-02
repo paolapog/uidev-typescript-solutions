@@ -1,0 +1,14 @@
+Q: Which of these are primitive types? Select all that apply.
+A: String and Number
+
+Q: Which of these are falsy values? Select all that apply.
+A: null, undefined, 0, ""
+
+Q: What is the result of typeof on a Class constructor?
+A: function
+
+Q: What is the result of typeof on a Class instance?
+A: object
+
+score: 88%
+
