@@ -1,0 +1,15 @@
+Q: How often should you use the any type?
+A: Only when necessary. Using any is just like writing JavaScript code, which means you lose the benefits of TypeScript. Sometimes it is required, though.
+
+Q: The unknown type is a good alternative to any, because it maintains TypeScript's type safety while still representing any value.
+A: true
+
+Q: What is the return type of this function?
+async function getFruitList() {
+  const response = await fetch("https://example.com/fruit");
+  const fruitList = await response.json();
+  return fruitList;
+}
+A: any
+
+score: 67%
