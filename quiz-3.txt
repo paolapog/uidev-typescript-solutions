@@ -1,0 +1,23 @@
+Q: What is the type of this variable? const fruitSweetness = 80;
+A: Number
+
+Q: Why don't I have to use any type annotations with this function?
+const fruitList = [
+  {
+    name: "Apple",
+    color: "red",
+  },
+  {
+    name: "Banana",
+    color: "yellow",
+  },
+  {
+    name: "Cherry",
+    color: "red",
+  },
+];
+
+const filteredFruit = fruitList.filter((fruit) => fruit.color === "red")
+A: TypeScript is able to infer the type of the callback's parameters since we pass the callback function directly to the filter method.
+
+score: 100%
