@@ -1,0 +1,29 @@
+Q: Why would I want to use the private modifier? Select all that apply.
+A: private keeps outside users from attempting to access class instance properties and methods, private keeps classes which extend the base class from attempting to access class properties on the parent class, private is a hint that it contains implementation details which might cause a breaking change if someone accessed them directly, I can't use ES Private fields because I am targeting an older version of JavaScript and I can't afford to add the extra polyfills.
+
+Q: Which of these things we learned about classes are TypeScript-only? Select all that apply.
+A: public, protected, private, readonly, Property shorthand, eg. constructor(public name:string) {}
+
+Q: What is wrong with this code?
+class Fruit {
+  constructor(private name:string) {}
+  get name() {
+    return this.name;
+  }
+}
+
+A: Trying to access this.name in the get function will cause an infinite recursive loop.
+
+Q: What is wrong with this code?
+class Fruit {
+  constructor(private _name:string) {}
+  get name() {
+    return this.name;
+  }
+}
+
+const fruit = new Fruit('Apple');
+fruit.name = 'Banana'
+A: Since we didn't define a set function for name, it is considered read-only, so this will throw a type error.
+
+score: 74%

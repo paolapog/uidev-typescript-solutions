@@ -1,0 +1,67 @@
+Q: What is the result of this code?
+class Fruit {
+  name:string;
+  color:string;
+  constructor(name:string, color:string) {
+    this.name = name;
+    this.color = color;
+  }
+}
+
+console.log(typeof Fruit);
+A: "function" is logged to the console.
+
+Q: What is the result of this code?
+class Fruit {
+  name:string;
+  color:string;
+  constructor(name:string, color:string) {
+    this.name = name;
+    this.color = color;
+  }
+}
+
+const apple = new Fruit("Apple", "red");
+console.log(typeof apple);
+A: "object" is logged to the console.
+
+Q: What is wrong with this code?
+class Fruit {
+  name:string;
+  color:string;
+  constructor(name:string, color:string) {
+    this.name = name;
+    this.color = color;
+  }
+}
+const fruitBasket: Fruit[] = [];
+
+fruitBasket.push(new Fruit("Pear", "green"));
+A: Nothing. This code is written correctly.
+
+Q: What is the value of the color property on the apple variable?
+class Fruit {
+  name:string;
+  color:string;
+  constructor(name:string, color?:string = "yellow") {
+    this.name = name;
+    this.color = color;
+  }
+}
+
+const apple = new Fruit("apple")
+A: "yellow"
+
+Q: What is wrong with this code?
+abstract class EdibleThing {
+  name: string;
+  abstract eat(): void;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+const apple = new EdibleThing("Apple");
+A: EdibleThing is an abstract class, so it can't be instantiated directly.
+
+score: 80%
