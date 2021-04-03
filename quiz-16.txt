@@ -1,0 +1,68 @@
+Q: What is the type of fruitNutrition in this code example? Select all that apply.
+interface Fruit {
+  name: string;
+  color: string;
+  nutrition: { name: string; amount: number }[];
+}
+
+function getCalories(fruit: Fruit): Fruit["nutrition"][0]["amount"] {
+  return fruit.nutrition.find((nutrition) => nutrition.name === "calories").amount;
+}
+
+const fruitNutrition = getCalories({
+  name: "Apple",
+  color: "red",
+  nutrition: [{ name: "calories", amount: 20 }],
+});
+A: number
+
+Q: What is the type of Callback in this code example?
+function parseAndDoubleString(input:string):number {
+  return parseFloat(input) * 2;
+}
+
+type Callback = typeof parseAndDoubleString;
+A: (input:string) => number
+
+Q: What is the type of fruitKeys in this code example?
+interface Fruit {
+  name: string;
+  color: string;
+  nutrition: { name: string; amount: number }[];
+}
+
+type fruitKeys = keyof Fruit;
+A: "name" | "color" | "nutrition"
+
+Q: What is the type of appleKeys in this code example?
+const apple = {
+  name:"Apple",
+  color:"red",
+  sweetness:80,
+  hasSeeds:true
+}
+
+type appleKeys = keyof apple;
+A: This throws a type error. You can't use keyof on a runtime value.
+
+Q: const apple = {
+  name:"Apple",
+  color:"red",
+  sweetness:80,
+  hasSeeds:true
+}
+
+type appleKeys = keyof typeof apple;
+A: "name" | "color" | "sweetness" | "hasSeeds"
+
+Q: What is the type of AppleParams in this code example?
+const name = "Apple";
+const color = "red";
+const sweetness = 80;
+const ripe = true;
+const appleParams = [name, color, sweetness, ripe] as const
+A: [string, string, number, boolean]
+
+score: 83%
+
+
