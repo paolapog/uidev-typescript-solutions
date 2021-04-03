@@ -1,0 +1,39 @@
+Q: What is wrong with this code?
+interface Fruit {
+  name: string;
+  color: string;
+  juice: () => void;
+}
+
+interface Vegetable {
+  name: string;
+  color: string;
+  steam: () => void;
+}
+type EdibleThing = Fruit | Vegetable;
+
+function prepareEdibleThing(food: EdibleThing) {
+  food.juice();
+}
+A: We aren't allowed to access the juice property of EdibleThing because it isn't a property of Vegetable.
+
+Q: What property do we use to discriminate between these three interfaces?
+interface ErrorResult {
+  state: "error",
+  error: Error,
+  data: null
+}
+interface DataResult {
+  state: "resolved",
+  error: null,
+  data: string
+}
+interface LoadingResult {
+  state: "loading",
+  error: null,
+  data: null
+}
+type Result = ErrorResult | DataResult | LoadingResult;
+A: state
+
+score: 100%
