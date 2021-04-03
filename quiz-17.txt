@@ -1,0 +1,34 @@
+Q: What is the purpose of type narrowing? Select all that apply.
+A: We determine the type of a value with runtime checks. , We determine that a value is not a certain type with runtime checks.
+
+Q: What types of conditionals can we use for type narrowing? Select all that apply.
+A: "if" statements, "switch" statements, Binary (&&, ||) and Ternary (?/:) expressions
+
+Q: What can we use to determine whether a value is an array?
+A: Array.isArray(value)
+
+Q: What is wrong with this code? Select all that apply.
+interface Person {
+  name: string;
+}
+function sayNameLoud(person: unknown) {
+  if ("name" in person) {
+    console.log(`Hey, ${person.name.toUpperCase()}`);
+  }
+}
+A: We never use the Person interface., We aren't allowed to access properties on unknown values, even with an in check. We should use a different parameter type., The name property might not be a string, but we aren't checking the type of name, only its existence.
+
+Q: What is wrong with this code? Select all that apply.
+interface Person {
+  name: string;
+  age: number;
+}
+function sayNameLoud(person: object | Person) {
+  if ("age" in person) {
+    console.log(`Hey, ${person.name.toUpperCase()}`);
+  }
+}
+sayNameLoud({ age: 27 });
+A: When we do our type narrowing with "age" in person, we aren't checking for the existence of the name property., When this code runs, it throws a runtime type error.
+
+score: 90%
