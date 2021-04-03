@@ -1,0 +1,25 @@
+Q: What is wrong with this code?
+document.getElementById("messageInput").innerText = "Alex";
+A:The result of our DOM query might be undefined, so accessing innerText might throw an error.
+
+Q: What is wrong with this code?
+const messageInput = document.getElementById("messageInput");
+if (messageInput) {
+  messageInput.innerText = "Alex";
+}
+A: Nothing is wrong with that code. It is written correctly.
+
+Q: Why might we use Optional Chaining? Select all that apply.
+A: We need to access a property deep in an object that might be undefined., We need to access an index of an array that might be undefined., We need to call a function that might actually be undefined.
+
+Q: What is the value of messageInputValue if document.getElementById("messageInput")?.value is an empty string?
+const messageInputValue =
+  document.getElementById("messageInput")?.value ?? "Alex";
+A: ""
+
+Q: When would this code throw a runtime error? Select all that apply.
+const element = document.getElementById("messageInput")
+const messageInputValue = element!.value;
+A: If element is undefined.
+
+score: 70%
