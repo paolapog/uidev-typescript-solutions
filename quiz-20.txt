@@ -1,0 +1,41 @@
+Q: What's wrong with this code?
+const canvas = document.getElementById("canvas");
+const context = canvas?.getContext("2d");
+A: canvas is a HTMLElement, which doesn't have the .getContext method, so this throws a type error.
+
+Q: What is the correct way to assert that canvas is a HTMLCanvasElement?
+A: const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+
+Q: What is wrong with this code?
+interface Car {
+  make: string;
+  model: string;
+  color: string;
+}
+interface Fruit {
+  name: string;
+  color: string;
+  sweetness: number;
+}
+
+let car: Car = { make: "Pontiac", model: "Sunfire", color: "silver" };
+let fruityCar: Fruit = car as Fruit;
+A: You can't assert that car is a Fruit because its properties don't match closely enough, so it throws a type error.
+
+Q: What is wrong with this code? Select all that apply.
+interface Car {
+  make: string;
+  model: string;
+  color: string;
+}
+interface Fruit {
+  name: string;
+  color: string;
+  sweetness: number;
+}
+
+let car: Car = { make: "Pontiac", model: "Sunfire", color: "silver" };
+let fruityCar: Fruit = car as unknown as Fruit;
+A: It doesn't throw an error, but the only property we can access on fruityCar is the common color property, It doesn't throw an error, but trying to access the properties of Fruit on fruityCar will return undefined, We've lied to the type checker, telling it that a Car is actually a Fruit. What's worse, its believed us, making it seem like our code is type safe when it really isn't.
+
+score: 83%
