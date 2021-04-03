@@ -1,0 +1,32 @@
+Q: What is the difference between a type predicate function and an assertion function?
+A: Type predicate functions return a boolean; assertion functions throw an error.
+
+Q: What is wrong with this code?
+interface Fruit {
+  name: string;
+  color: string;
+  sweetness: number;
+}
+interface Vegetable {
+  name: string;
+  color: string;
+  tenderness: number;
+}
+
+function isFruit(maybeFruit: Fruit | Vegetable) {
+  if ("sweetness" in maybeFruit) return true;
+  return false;
+}
+
+const tomato = { name: "Tomato", color: "red", tenderness: 70 };
+if (isFruit(tomato)) {
+  console.log(`Tomato is ${tomato.sweetness}% sweet.`);
+} else {
+  console.log(`Tomato is ${tomato.tenderness}% tender.`);
+}
+A: The isFruit function doesn't have a type predicate.
+
+Q: What are the two kinds of assertion functions? Select all that apply.
+A: The function asserts that a function argument is a specific type; otherwise it throws an error, The function asserts that a boolean argument is true; otherwise it throws an error.
+
+score: 83%
