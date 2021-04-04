@@ -1,0 +1,16 @@
+Q: What kind of error does this code throw?
+import type {FruitBasket} from './fruitBasket'
+import {Apple} from './fruit';
+
+const basket = new FruitBasket<Apple>();
+basket.add(new Apple())
+A: You can't instantiate FruitBasket because we only imported the type, not the value, of the class.
+
+Q: What are all the ways that we can export a type from a file.
+A: export interface Apple { name: string; }, export default interface Apple { name: string;}, interface Apple { name: string;}
+export = Apple;
+
+Q: What is the best approach when working with modules in TypeScript? Select all that apply.
+A: Avoid using CommonJS, require, and module.export =, Avoid using export = and import = ... require().,  Use ES Modules everywhere in the source code., Use the module property in TSConfig.json to choose the appropriate module output format., Use the esModuleInterop property in TSConfig.json to have good compatibility with imported modules.
+
+score: 90%
