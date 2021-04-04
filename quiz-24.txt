@@ -1,0 +1,47 @@
+Q: What is the type of "output" in this example?
+type LiteralType<T> = T extends string
+  ? string
+  : T extends number
+  ? number
+  : T extends boolean
+  ? boolean
+  : never;
+
+type output = LiteralType<"Hello there!">
+A: string
+
+Q: What does it mean that conditional types are distributive?
+A: A conditional type will check the type constraint against each member of the Union that is passed in.
+
+Q: What is the type of "output" in this example?
+type ConditionalTransform<T> = T extends null | undefined ? never : T;
+
+type output = ConditionalTransform<string | { name?: string } | undefined>
+A: string | { name?: string }
+
+Q: What does the "infer" keyword do in this example? Select all that apply.
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R
+  ? R
+  : any;
+
+A: It tells TypeScript to infer the type of the return value of whatever function gets passed in., 
+It creates a new generic type called "R"., It lets us "unwrap" a complicated type definition and pull out a specific part of it.
+
+Q: What is the type of "output" in this example?
+type AnyFunction = (...args: any) => any;
+type ReturnType<T extends AnyFunction> = T extends (...args: any) => infer R
+  ? R
+  : any;
+
+type ConditionalTransform<T> = T extends Promise<infer R> ? R : T;
+
+async function getFruitList() {
+  const response = await fetch('https://example.org/fruitList');
+  const fruitList: string[] = await response.json();
+  return fruitList;
+}
+
+type output = ConditionalTransform<ReturnType<typeof getFruitList>>
+A: string[]
+
+score: 64%

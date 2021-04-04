@@ -1,0 +1,45 @@
+Q: Why would we use a mapped type?
+A: We want to add a modification to each property of an object type, like adding and removing the readonly modifier.
+
+Q: How does the ObjectIdentity type modify the Fruit type in this example?
+interface Fruit {
+  name: string;
+  color: string;
+  sweetness: number;
+}
+type ObjectIdentity<T> = {
+  [P in keyof T]: T[P];
+};
+
+type ModifiedFruit = ObjectIdentity<Fruit>;
+A: No changes are made; the types are equivalent.
+
+Q: How does the Modify type modify the Fruit type in this example?
+interface Fruit {
+  name: string;
+  color: string;
+  readonly sweetness: number;
+}
+
+type Modify<T> = {
+  -readonly [P in Properties<T>]: T[P];
+};
+
+type ModifiedFruit = Modify<Fruit>;
+A: It removes the 'readonly' modifier from each property in Fruit.
+
+Q: How does the Modify type modify the fruit type in this example?
+interface Fruit {
+  name: string;
+  color: string;
+  readonly sweetness: number;
+}
+
+type Modify<T> = {
+  [P in Properties<T>]?: T[P];
+};
+
+type ModifiedFruit = Modify<Fruit>;
+A: It makes all of the properties of Fruit optional.
+
+score: 100%
