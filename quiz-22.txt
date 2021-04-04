@@ -1,0 +1,50 @@
+Q: What kinds of things can we use generics with? Select all that apply.
+A: Type aliases, Interfaces , Classes , Functions
+
+Q: What is the type of the output variable?
+function getFirstItem<T>(list: T[]): T {
+  return list[0];
+}
+
+const output = getFirstItem([1,2,3])
+A: number
+
+Q: What is the correct way to insert a definite type into this generic type?
+type Tree<T> = {
+  value: T;
+  left?: Tree<T>;
+  right?: Tree<T>;
+};
+
+A: let tree:Tree<string>;
+
+Q: What is wrong with this code?
+function getLength<T extends {length:number}>(input:T) {
+  return input.length;
+}
+
+getLength(5)
+A: A number is not compatible with the generic constraint that requires a length property.
+
+Q: What type does this function return?
+function duplicateInput<T>(input:T, count = 5) {
+  const output:T[] = []
+  for (let i = 0; i < count; i++>) {
+    output.push(input)
+  }
+  return output;
+}
+
+A: T[]
+
+Q: What is wrong with this code?
+function getObjectProperty<T, K extends keyof T>(object: T, key: K) {
+  return object[key];
+}
+
+const car = {wheels: 4, color: "white"};
+
+console.log(getObjectProperty(car, "maxSpeed"))
+A: Our second generic parameter, K, is constrained to the keys of T. Our car doesn't have a property "maxSpeed", so it throws an error.
+
+score: 100%
