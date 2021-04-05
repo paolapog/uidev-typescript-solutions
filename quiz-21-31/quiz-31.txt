@@ -1,0 +1,11 @@
+Q: What are the two biggest contributors to TypeScript's strange behavior? Select two answers.
+A: Structural Typing, Type Erasure
+
+Q: Why shouldn't I ever use an empty interface, such as the one below?
+interface Empty {}
+A: It doesn't have any properties, so you can assign anything to it. It's like any, but more dangerous.
+
+Q: Why can I pass a function with only one parameter to a callback that expects a function with three parameters?
+A: TypeScript doesn't care how many of the parameters that we use in our callback function; only that the parameters that we do use have the correct type.
+
+score: 70%
