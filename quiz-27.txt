@@ -1,0 +1,7 @@
+Q: What is Definitely Typed?
+A: It's a repository of type definitions for third-party modules that we can download from NPM.
+
+Q: How do we import a module that has no type definitions when the strict flag is turned on?
+A: Create a d.ts file that includes this line: `declare module "my-package";
+
+score: 100%

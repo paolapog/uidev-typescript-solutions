@@ -1,0 +1,7 @@
+Q: You need to write all of the type definitions for built-in JavaScript functions.
+A: false
+
+Q: Why would we want to modify the lib property in TSConfig.json?
+A: We want to write our code using the latest features of JavaScript., We don't need access to the DOM APIs, since we are working in a non-DOM environment like Node.js
+
+score: 80%

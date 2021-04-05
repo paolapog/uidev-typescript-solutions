@@ -1,0 +1,11 @@
+Q: Which kind of import does this code snippet use?
+import fruitBasket from '../fruitBasket'
+A: Relative Import
+
+Q: Why must we use caution when adjusting baseUrl and paths in TSConfig.json?
+A: Changing this affects how we write our import statements, which changes how our code is consumed by the end user, Third party tools that read our code, like Webpack, can't understand our import statements without something that understands how we changed out module resolution strategy.
+
+Q: How do we add type checking to an ES Module import from a CDN, like unpkg.com?
+A: We use NPM to install the @types package for the CDN module and use a custom paths setting to direct the CDN url import to the declaration file in our node_modules folder.
+
+score: 100%

@@ -1,0 +1,7 @@
+Q: What options let me choose which files are included and excluded from my TypeScript compilation? Select all that apply.
+A: include, exclude, files
+
+Q: How do I configure TypeScript to only type check my code, not compile it.
+A: noEmit
+
+score: 90%
