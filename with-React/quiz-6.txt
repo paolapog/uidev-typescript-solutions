@@ -1,0 +1,7 @@
+Q: What is the type of the dependency list used in useEffect, useMemo, and useCallback?
+A: ReadonlyArray<any>
+
+Q: Can we leave the dependency list off when using the useMemo hook?
+A: No, it has to be an array of some kind. Otherwise, you might as well not be using useMemo in the first place.
+
+score: 100%
