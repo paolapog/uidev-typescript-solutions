@@ -1,0 +1,20 @@
+Q: What is the difference between these two event handlers?
+  function handleOnChange(event: React.FormEvent<HTMLInputElement>):void {
+    // ...
+  }
+  const handleOnChange:ChangeEventHandler<HTMLInputElement> = (event) => {
+    // ...
+  }
+A: Not one thing is different. They are effectively equivalent.
+
+Q: What is the purpose of typeof event.target in this block of code?
+function handleClick(
+  event: React.MouseEvent<HTMLButtonElement>
+) {
+  const target = event.target as typeof event.target & ExtraProperties;
+  
+  // ...
+}
+A: It includes all of the existing properties in event.target, so the ExtraProperties interface can be added to them.
+
+score: 100%

@@ -1,0 +1,4 @@
+Q: What types can we use for the properties of our props parameter? Select all that apply.
+A: string, number[], An indexable type, like [key:string]:string, Any kind of function, Literally any type of value that we want., No, seriously. There is no restriction on the types of values you can pass as props to a React component., Heck, you could even pass another React component as a prop if you wanted.
+
+score: 100%

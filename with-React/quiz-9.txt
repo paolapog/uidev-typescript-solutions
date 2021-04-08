@@ -1,0 +1,39 @@
+Q: Which of these types can be used to type the children prop? Select all that apply.
+A: React.ReactNode, React.ReactElement, string, number, null
+
+Q: What does this props interface tell us about the component that uses it? Select all that apply.
+interface MousePositionProps {
+  children: (position:{x:number, y:number}) => ReactNode;
+}
+A: The component uses the Render Prop pattern., The component must always have a children prop when it is used.
+
+Q: What is wrong with this code?
+const Button: React.FC<{ style: Pick<React.CSSProperties, "backgroundColor" | "color" | "opacity"> }> = ({
+  style,
+  children,
+}) => {
+  return <button style={style}>{children}</button>;
+};
+
+const App = () => {
+  return <Button style={{display:"inline-flex"}}>Click me!</Button>
+}
+A: The display property is not valid on the style prop because we aren't including it from the CSSProperties type.
+
+Q: What is wrong with this code?
+interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
+  variant: "primary" | "success" | "warning" | "danger";
+}
+const Button: React.FC<ButtonProps> = ({
+  variant,
+  className = "",
+  ...props
+}) => {
+  return <button {...props} className={`${className} ${variant}`} />;
+};
+const App = () => {
+  return <Button onClick={()=> alert('Surprise!')}>Click me!</Button>
+}
+A: variant is a required prop on <Button>, but it isn't being assigned.
+
+score: 95%
