@@ -1,0 +1,21 @@
+Q: What is the type of stateValue in the code below?
+const App = () => {
+  const [stateValue] = useState()
+  // ...
+}
+A: undefined
+
+Q: What is the problem with this code?
+const App = () => {
+  const [fruitList, setFruitList] = useState<string[]>()
+  // ...
+}
+A: We are passing an array of strings as the type of our state value, but we aren't passing it an initial state value.
+
+Q: What are the three things we need to have type safety as we use the useReducer hook? Select all that apply.
+A: A type to represent our state. , A type to represent our reducer actions., A reducer function that uses our state and action types for its parameters and return type.
+
+Q: What are the types of values we can use as state for a useReducer hook? Select all that apply.
+A: An object or interface, An array, A string, A number, A union of an object and null
+
+score: 95%
