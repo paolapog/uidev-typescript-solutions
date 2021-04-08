@@ -1,0 +1,23 @@
+Q: What is the return type of a component that returns JSX?
+A: React.Element
+
+Q: What is the difference between a React function component and a regular function that returns a React element?
+A: There is no difference between React function components and regular functions.
+
+Q: Which of these function components are annotated correctly? Select all that apply.
+function CompA(props: {enabled: boolean}) {
+  /* ... */
+}
+
+function CompB({enabled}: {enabled: boolean}) {
+  /* ... */
+}
+
+const CompC = (props: {enabled: boolean}): React.Element | null => {
+  /* ... */
+};
+
+const CompD: React.FC<{enabled: boolean}> = ({enabled}) => {
+  /* ... */
+};
+A:
