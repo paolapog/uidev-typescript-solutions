@@ -1,0 +1,10 @@
+Q: What packages do we need to install to use TypeScript with React on the web? Select all that apply.
+A: typescript, @types/react, @types/react-dom
+
+Q: What jsx option should we use for the new JSX transform in production mode?
+A: react-jsx
+
+Q: What is the correct extension for a TypeScript file that has a React component written in JSX?
+A: .tsx
+
+score: 100%
