@@ -1,0 +1,25 @@
+Q: What is wrong with this code?
+function RenderElement({ Element }: { Element: ReactElement }) {
+  return <div><Element /></div>;
+}
+
+const App = () => {
+  return <RenderElement Element={<div>Hello!</div>} />
+}
+A: The Element prop is a ReactElement, but it is being used as a React Component by wrapping it in JSX brackets.
+
+Q: What is wrong with this code?
+function RenderComponent({ Comp }: { Comp: ComponentType }) {
+  return (
+    <div>
+      <Comp />
+    </div>
+  );
+}
+
+const App = () => {
+  return <RenderComponent Comp={<div>Hello!</div>}>
+}
+A: The value that is passed in to the Comp prop is a ReactElement, not a React Component.
+
+score: 100%

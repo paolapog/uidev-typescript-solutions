@@ -20,4 +20,6 @@ const CompC = (props: {enabled: boolean}): React.Element | null => {
 const CompD: React.FC<{enabled: boolean}> = ({enabled}) => {
   /* ... */
 };
-A:
+A: all of them
+
+score: 100%
