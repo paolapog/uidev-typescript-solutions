@@ -1,0 +1,24 @@
+Q: Why do we always have to pass a generic argument to createRef or useRef when using the ref to get a DOM element reference?
+A: Sadly, TypeScript isn't able to infer the type of the DOM element that we are attaching our ref to, so we have to help it out by passing a generic argument.
+
+Q: What is wrong with this code?
+const App = () => {
+  const renderCount = React.useRef(0)
+
+  React.useEffect(() => {
+    renderCount.current += 1;
+  })
+
+  // ...
+}
+A: There is nothing wrong with this code.
+
+Q: import { forwardRef } from "react";
+const Input = forwardRef<{ disabled?: boolean }, HTMLInputElement>(
+  ({ disabled }, ref) => {
+    return <input ref={ref} disabled={disabled} />;
+  }
+);
+A: The order of the forwardRef generic arguments is mixed up; the ref type goes first, followed by the props.
+
+score: 100%
