@@ -1,0 +1,14 @@
+Q: What is the type of the contextValue variable?
+const ThemeModeContext = createContext("dark")
+
+const App = () => {
+  const contextValue = useContext(ThemeModeContext);
+  // ...
+}
+A: string
+
+Q: Why do you have to be extra careful when initializing context using the code below?
+const ThemeModeContext = createContext<ThemeModeInterface>(undefined!);
+A: Our context initializes as undefined, but we are telling TypeScript that it has a value. If we access this context outside of a provider tree, the value of our context will be undefined, but TypeScript will think that it is ThemeModeInterface.
+
+score: 100%
